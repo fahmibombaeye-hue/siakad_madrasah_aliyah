@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SIAKAD – Madrasah Aliyah Nahdlatul Arifin</title>
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+<style>
+:root{
+  --hijau-tua:#0b3d2e;
+  --hijau:#14694c;
+  --hijau-muda:#86efac;
+  --emas:#e3b341;
+  --putih:#ffffff;
+  --abu:#eef3f0;
+  --teks:#12261e;
+  --teks-pudar:#4d6359;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root{--putih:#0f1d17;--abu:#14261e;--teks:#e8f3ed;--teks-pudar:#9bb5a8;--hijau:#2f9e72}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;background:var(--putih);color:var(--teks);line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--emas);outline-offset:3px}
+
+.hero{background:var(--hijau-tua);color:#fff;padding:clamp(28px,6vw,64px) 20px 0;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:56px;background:var(--putih);clip-path:polygon(0 100%,100% 100%,100% 0,50% 70%,0 0)}
+.wrap{max-width:960px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:48px;height:48px;object-fit:contain}
+.brand span{font-weight:600;letter-spacing:.2px;color:var(--hijau-muda)}
+.hero-body{display:grid;gap:28px;padding:clamp(36px,8vw,88px) 0 110px;max-width:640px}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:700;font-size:clamp(2.2rem,6vw,3.6rem);line-height:1.1;margin:0}
+.hero p{margin:0;font-size:1.1rem;color:#cfe9db;max-width:46ch}
+.aksi{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:13px 24px;border-radius:10px;font-weight:600;text-decoration:none;border:2px solid transparent}
+.btn.utama{background:var(--emas);color:#2a2000}
+.btn.utama:hover{background:#f0c24f}
+.btn.garis{border-color:var(--hijau-muda);color:var(--hijau-muda)}
+.btn.garis:hover{background:rgba(134,239,172,.12)}
+
+section{padding:clamp(36px,6vw,64px) 20px}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:1.7rem;margin:0 0 24px}
+.fitur{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.fitur div{border-left:4px solid var(--hijau);padding:2px 0 2px 16px}
+.fitur h3{margin:0 0 4px;font-size:1.05rem}
+.fitur p{margin:0;color:var(--teks-pudar)}
+
+.masuk{background:var(--abu)}
+.jalur{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.jalur a{display:block;padding:22px;border-radius:12px;background:var(--putih);text-decoration:none;border:1px solid rgba(20,105,76,.25)}
+.jalur a:hover{border-color:var(--hijau)}
+.jalur strong{display:block;font-size:1.1rem;margin-bottom:4px}
+.jalur span{color:var(--teks-pudar)}
+
+footer{padding:28px 20px;text-align:center;color:var(--teks-pudar);font-size:.9rem}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brand">
+      <img src="assets/img/logo.png" alt="Logo Madrasah Aliyah Nahdlatul Arifin">
+      <span>Madrasah Aliyah Nahdlatul Arifin</span>
+    </div>
+    <div class="hero-body">
+      <h1>Sistem Informasi Akademik Madrasah</h1>
+      <p>Lihat data siswa, kelas, dan peringkat prestasi dalam satu tempat. Masuk dengan NISN, atau daftar jika kamu siswa baru.</p>
+      <div class="aksi">
+        <a class="btn utama" href="index.php">Masuk ke SIAKAD</a>
+        <a class="btn garis" href="daftar.php">Daftar siswa baru</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <h2>Yang bisa kamu lakukan</h2>
+      <div class="fitur">
+        <div>
+          <h3>Mendaftar online</h3>
+          <p>Isi formulir pendaftaran dan unggah foto. Admin akan memverifikasi dan mengirim NISN serta password.</p>
+        </div>
+        <div>
+          <h3>Melihat data madrasah</h3>
+          <p>Siswa yang sudah aktif bisa membuka data madrasah dan kelasnya setelah masuk.</p>
+        </div>
+        <div>
+          <h3>Memantau peringkat</h3>
+          <p>Peringkat siswa berprestasi dihitung dengan metode SAW dan dapat dilihat di menu Peringkat.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="masuk">
+    <div class="wrap">
+      <h2>Pilih jalur masuk</h2>
+      <div class="jalur">
+        <a href="index.php">
+          <strong>Siswa</strong>
+          <span>Masuk dengan NISN dan password dari admin.</span>
+        </a>
+        <a href="index.php">
+          <strong>Admin</strong>
+          <span>Kelola pendaftar, data siswa, dan pengaturan SPK SAW.</span>
+        </a>
+        <a href="daftar.php">
+          <strong>Belum terdaftar?</strong>
+          <span>Kirim formulir pendaftaran siswa baru.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© Madrasah Aliyah Nahdlatul Arifin</footer>
+
+</body>
+</html>
